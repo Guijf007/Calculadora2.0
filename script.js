@@ -4,5 +4,15 @@ function adicionar(value){
     document.getElementById("tela").value = displayValue;
 }
 function limpar(){
-    document.getElementById(display).value="";
+    displayValue="";
+    document.getElementById("tela").value= displayValue;
+}
+function calcular(){
+    try{
+        const result= eval(displayValue);
+        document.getElementById('tela').value=result;
+        displayValue = result.toString();
+    }catch (error){
+        document.getElementById('tela').value="Error";
+    }
 }
